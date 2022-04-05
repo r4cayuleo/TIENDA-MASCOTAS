@@ -134,9 +134,14 @@ hr {
 /* books banner one */
 .cards-banner-one {
     width: 100%;
-    height: 350px;
+    height: 550px;
     background: url(img/tumirarmisentir.png);
-    margin-bottom: 40px;
+    padding: 50px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
 }
 
 .cards-banner-one .content {
@@ -147,7 +152,7 @@ hr {
 
 .cards-banner-one p,
 .cards-banner-one h2 {
-    margin: 10px 0 20px 0;
+    margin-bottom: 10px
 }
 
 .cards-banner-two {
@@ -276,4 +281,3 @@ hr {
         padding: 60px 20px;
     }
     }
-}
