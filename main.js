@@ -7,14 +7,11 @@ ScrollReveal().reveal('.res-destacada', {delay: 300});
 ScrollReveal().reveal('.cards-banner-one', {delay: 300});
 ScrollReveal().reveal('.cards-banner-two', {delay: 300});
 
-// INDEX LIBROS
+// INDEX ALIMENTOS
 ScrollReveal().reveal('', {delay: 300});
 
-// INDEX RESEÑAS
+// INDEX ACCESORIOS
 ScrollReveal().reveal('', {delay: 300});
 
-// INDEX AUTORES
-ScrollReveal().reveal('', {delay: 300});
-
-// INDEX ULTIMA PUBLICACION
+// INDEX SALUD Y CUIDADO
 ScrollReveal().reveal('', {delay: 300});
