@@ -26,7 +26,6 @@ ul {
 /* Navegacion */
 .nav-main {
 	transition: all 0.8s ease-in;
-	background: rgb(68, 51, 68) ;
 }
 .nav-main li a {
 	font-size: 17px;
@@ -92,9 +91,11 @@ hr {
     justify-content: flex-end;
 }
 .principal {
-    background: url(./img/tienda-animales.webp) no-repeat;
+    background: url(https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2019/02/tienda-animales.jpg?itok=nZ_hECrw) no-repeat;
     background-position: center;
     background-size: cover;
+    height: 180px;
+    width: 100%;
 }
 .btn {
     cursor: pointer;
@@ -125,8 +126,9 @@ hr {
 }
 .accesorios-masc {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
+    text-align: center;
 }
 .accesorios-masc img {
     width: 200px;
@@ -210,8 +212,21 @@ hr {
     text-align: center;
 }
 
-@media (max-width: 700px) {
-
+/* ESCRITORIO */
+@media (max-width: 1199.98px)  {
+    .accesorios-masc {
+        grid-template-columns: repeat(4, 1fr);
+        text-align: center;
+        justify-content: center;
+    }
+    .footer-links .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+    }
+}
+/* TABLETS */
+/*PORTRAIT*/
+@media screen and (max-width:768px) and (orientation:portrait) {
     .menu-btn {
         display: block;
     }
@@ -221,7 +236,7 @@ hr {
         position: absolute;
         top: 0;
         left: 0;
-        background: #2f3640;
+        background: #dbb949;
         height: 100%;
         padding: 30px;
         opacity: .9;
@@ -242,28 +257,124 @@ hr {
         margin-right: 40px;
     }
 
-    .res-destacada {
+    .accesorios-masc {
         grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+    }
+    .footer-links .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+    }
+    }
+    }
+}
+/* LANDSCAPE */
+@media screen and (max-width:768px) and (orientation:landscape) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-main ul.nav-menu {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #dbb949;
+        height: 100%;
+        padding: 30px;
+        opacity: .9;
+        transform: translateX(-400px);
+        transition: transform .5s ease-in-out;
+    }
+
+    .nav-main ul.nav-menu.show {
+        transform: translateX(-20px);
+    }
+
+    .nav-main ul.nav-menu li {
+        padding: 20px;
+        font-size: 14px;
+    }
+
+    .nav-main ul.nav-menu-right {
+        margin-right: 40px;
+    }
+
+    .accesorios-masc {
+        grid-template-columns: repeat(4, 1fr);
+        text-align: center;
+    }
+    .footer-links .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+    }
+    }
+
+/* DISPOSITIVOS MOVIL */
+@media (max-width: 700px) {
+    .accesorios-masc {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+    }
+    .accesorios-masc img {
+        height: 270px;
+        align-items: center;
+        
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-main ul.nav-menu {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #dbb949;
+        height: 100%;
+        padding: 30px;
+        opacity: .9;
+        transform: translateX(-400px);
+        transition: transform .5s ease-in-out;
+    }
+
+    .nav-main ul.nav-menu.show {
+        transform: translateX(-20px);
+    }
+
+    .nav-main ul.nav-menu li {
+        padding: 20px;
+        font-size: 14px;
+    }
+
+    .nav-main ul.nav-menu-right {
+        margin-right: 40px;
+    }
+
+    .accesorios-masc {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
     }
     .cards-banner-one .content,
     .cards-banner-two .content  {
         width: 80%;
     }
     .footer-links .footer-container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
     }
 }
-
+/* MOVIL PEQUEÑO */
 @media (max-width: 500px) {
-    .res-destacada {
+    .accesorios-masc {
         grid-template-columns: repeat(1, 1fr);
+        text-align: center;
     }
-    .res-destacada img {
+    .accesorios-masc img {
         height: 270px;
-    }
-    .cards-banner-one .content, 
-    .cards-banner-two .content {
-        width: 100%;
-        padding: 60px 20px;
+        align-items: center;
+        
     }
     }
+
