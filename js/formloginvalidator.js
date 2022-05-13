@@ -1,31 +1,66 @@
-// put validations using jquery
-$(document).ready(function() {
-    $("#email").keyup(function(){
-        var regx_email = /^([a-zA-Z]+) ([0-9]+)? (@) ([a-ZA-Z]{5,10}(.)([a-zA-Z]+))$/i;
-
-        var email_inp = $(this).val();
-        if (regx_email.test(email_inp)) {
-            $("#email_status").text("valid");
-            $("#email status").removeClass("text-danger"); 
+$.validator.setDefaults({
+    submitHandler: function () {
+      alert("submitted!");
+      
+    },
+  });
+  
+  $(document).ready(function () {
+    $("#signupForm").validate({
+      rules: {
+        email: {
+            required: true,
+            email: true,
+          },
+        password: {
+          required: true,
+          minlength: 5,
+        },
+      messages: {
+        fullname: {
+          required: "Por favor ingresa tu nombre completo",
+          minlength: "Tu nombre debe ser de no menos de 5 caracteres",
+        },
+        password: {
+          required: "Por favor ingresa una contraseña",
+          minlength:
+            "Tu contraseña debe ser de no menos de 5 caracteres de longitud",
+        },
+        confirm_password: {
+          required: "Ingresa una contraseña",
+          minlength:
+            "Tu contraseña debe ser de no menos de 5 caracteres de longitud",
+          equalTo: "Por favor ingresa la misma contraseña de arriba",
+        },
+        email: "Por favor ingresa un correo válido",
+        agree: "Por favor acepta nuestra política",
+        sexo: {
+          required: "Por favor",
+        },
+      },
+      errorElement: "em",
+      errorPlacement: function (error, element) {
+        // Add the `help-block` class to the error element
+        error.addClass("help-block");
+  
+        if (element.prop("type") === "checkbox") {
+          error.insertAfter(element.parent("label"));
+        } else {
+          error.insertAfter(element);
         }
-        else {
-            $("#email_status").addClass("text-danger");
-            $("#email_status").text ("Invalid");
-        }
-});
-
-    $("#pass").keyup(function(){
-        var regx_pass = /^([a-zA-Z]+)([0-9]+)([$&+,:;=?@#|'<>.^*()%!-]+)$/i;
-
-        var pass = $(this).val();
-        if (regx_pass.test(pass)){
-            $("#pass_status").text("valid");
-            $("#pass_status").removeClass("text-danger");
-        }
-        else {
-            $("#pass_status").text("Invalid");
-            $("#pass_status").addClass("text-danger");
-        }
-        });
-
-});
+      },
+      highlight: function (element, errorClass, validClass) {
+        $(element)
+          .parents(".col-sm-10")
+          .addClass("has-error")
+          .removeClass("has-success");
+      },
+      unhighlight: function (element, errorClass, validClass) {
+        $(element)
+          .parents(".col-sm-10")
+          .addClass("has-success")
+          .removeClass("has-error");
+      },
+    });
+  });
+  
