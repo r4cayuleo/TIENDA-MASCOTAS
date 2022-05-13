@@ -17,26 +17,14 @@ $.validator.setDefaults({
           minlength: 5,
         },
       messages: {
-        fullname: {
-          required: "Por favor ingresa tu nombre completo",
-          minlength: "Tu nombre debe ser de no menos de 5 caracteres",
-        },
         password: {
           required: "Por favor ingresa una contraseña",
           minlength:
             "Tu contraseña debe ser de no menos de 5 caracteres de longitud",
-        },
-        confirm_password: {
-          required: "Ingresa una contraseña",
-          minlength:
-            "Tu contraseña debe ser de no menos de 5 caracteres de longitud",
-          equalTo: "Por favor ingresa la misma contraseña de arriba",
-        },
+        }
         email: "Por favor ingresa un correo válido",
         agree: "Por favor acepta nuestra política",
-        sexo: {
-          required: "Por favor",
-        },
+        
       },
       errorElement: "em",
       errorPlacement: function (error, element) {
@@ -63,4 +51,3 @@ $.validator.setDefaults({
       },
     });
   });
-  
